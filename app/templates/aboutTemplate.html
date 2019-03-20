@@ -1,0 +1,32 @@
+        <h1>angularjs-router-query-app</h1>
+        <p>Generic app using <code>angularjs</code> (≥v1.5), <code>ui-router</code> (≥v1.0), and <code>ui-grid</code> (≥v4.0.0).</p>
+        <p>Includes routes for dropdowns and tabs, and a query application. The basic app has two parts: <code>queryForm</code> and <code>results</code>. The <code>queryForm</code> displays a set of inputs and a 'Search' button. This sets the parameters and sends a search to the server (e.g. a REST api provided by RESTHEART for MongoDB). The results are transformed (map, reduce, filter) and loaded into the ui-grid.</p>
+        <h2>QuickStart</h2>
+        <p>TODO: View it on <a href="http://routerapp.xcentialcorp.co">http://routerapp.xcentialcorp.co</a></p>
+        <p>It is running as a static Git Pages application.</p>
+        <h2>Installation</h2>
+        <p>To install, check out the current repo and run</p>
+        <pre><code class="bash">
+        npm install
+        npm build
+        </code></pre>
+        <p>Serve from the main directory, (e.g. using Python simpleserver)</p>
+        <p>TODO: provide a nodejs service, to run with <code>npm start</code></p>
+        <h2>Routes and states</h2>
+        <p>This project demonstrates the use of <code>ui-router</code> (&gt;1.0) states. Each state points to an html template (e.g. <code>about</code>) or an Angularjs component (e.g. <code>search.type</code>). The states are defined in <code>app/app.js</code>, and each component-based state points to a component in <code>app/components/appComponents.js</code>. The navbar at the top of the application (<code>templates/navbarTopComponent.html</code>) allows a user to select different states in a hyperlink. The state is defined in the <code>ui-sref</code> attribute of each link.</p>
+        <h2>Application layout</h2>
+        <p>The html entry point for the application is in <code>index.html</code>, which is build from <code>index.src.html</code> by <code>npm build</code>. Changes to the index file should be made in <code>index.src.html</code> before building, though most changes can be done in sub-components. The <code>&lt;ui-view&gt;&lt;/ui-view&gt;</code> element in <code>index.html</code> generates all the subcomponents, depending on the current state. For example, in <code>search.type</code>, the <code>searchType</code> component is activated. This, in turn loads the template in <code>templates/searchTypeComponent.html</code>, which in turn loads the <code>queryForm</code> and <code>results</code> components.</p>
+        <h2>Search Applications</h2>
+        <p>Search applications are built on the <code>searchType</code> component (in <code>/app/components/appComponents.js</code>). As mentioned above, this component is itself composed of both a <code>queryForm</code> component and a <code>results</code> component. There can be many 'types' of search application. Each is defined by a JSON object in <code>data/searchtypes.json</code> and a search function in <code>app/services/searchFnService.js</code>. The two definitions go together to define search and results-processing.</p>
+        <h3>SearchType JSON</h3>
+        <p>The JSON object defines the following fields:</p>
+        <ul>
+          <li><code>name</code>: the name of the search application</li>
+          <li><code>paramFields</code>: an array of objects. Each object defines an input element for the search, with a label, placeholder and a variable name (<code>varname</code>). These input fields are the ones that are used in the search function to retrieve data, e.g. from a server. The input fields defined here become the keys in a <code>queryParams</code> url parameter. For example, the variables may be <code>type1_input1</code> and <code>type1_input2</code>; when a user enters two values for these inputs (e.g. <code>this</code> and <code>that</code> respectively), and clicks <code>GO</code>, the application URL has the following appended: <code>queryParams={"type1_input1":"this","type1_input2":"that"}</code></li>
+          <li><code>gridOptions</code>: these define the <code>ui-grid</code> to display the results of the search. This may include the column order, width, menus, filters, etc. Details about these options can be found at the Angular ui-grid repository <a href="http://ui-grid.info/">here</a>.</li>
+        </ul>
+        <h3>Search Function</h3>
+        <p>The search function for each type of search is defined in <code>app/services/searchFnService.js</code>. The search function in the <code>searchFns</code> object has the <code>name</code> of the search (defined in the search JSON above) as the key for the function. The function takes as input the <code>queryParams</code> object, defined by user input. This function may, for example, use <code>$http</code> to get data from a server, process the data (e.g. with <code>map</code>, <code>reduce</code> and <code>filter</code> functions) and return a data object in the form that can be consumed by the definition in the <code>gridOptions</code>, to display in the <code>ui-grid</code>.</p>
+        <p>The current two sample search types do not use the queryParams at all, but return a constant object that displays in the ui-grid.</p>
+        <p>TODO: Update the searchFn definition to show the use of <code>$http</code> and processing results.</p>
+        

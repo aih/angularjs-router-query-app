@@ -1,0 +1,36 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <meta name="author" content="Ari Hershowitz" />
+    <style>
+        [ng\:cloak],
+        [ng-cloak],
+        .ng-cloak {
+            display: none !important;
+        }
+    </style>
+    <title></title>
+    <link rel="stylesheet" href="app/css/app.packed.min.css">
+</head>
+<body ng-app="app">
+    <navbar-top></navbar-top>
+    <div  class="appBody">
+        <div class="navtabs">
+            <a ui-sref="tab.sref" ui-sref-active="active" ng-repeat="tab in tabs">{{tab.name}}</a>
+        </div>
+        <div class="tabcontent">
+            <ui-view></ui-view>
+        </div>
+    </div>
+</body>
+<script src="app/js/app.packed.min.js"></script>
+<script type="text/javascript" src="app/js/app.js"></script>
+<script type="text/javascript" src="app/services/searchTypeService.js"></script>
+<script type="text/javascript" src="app/services/searchFnService.js"></script>
+<script type="text/javascript" src="app/components/appComponents.js"></script>
+
+</html>

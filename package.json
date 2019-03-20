@@ -1,0 +1,33 @@
+{
+  "name": "angularjs-router-query-app",
+  "version": "0.0.2",
+  "description": "Generic app for routing",
+  "main": "",
+  "typings": "",
+  "scripts": {
+    "build": "usemin ./index.src.html --dest ./ --output ./index.html; replace-in-file '<%= $npm_package_version %>' '0.0.1' ./index.html,./index.html;"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xcential-Corporation/angularjs-router-query-app.git"
+  },
+  "author": "Ari Hershowitz <ari@xcential.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Xcential-Corporation/angularjs-router-query-app/issues"
+  },
+  "homepage": "https://github.com/Xcential-Corporation/angularjs-router-query-app#readme",
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.22",
+    "angular": "^1.7.5",
+    "angular-sanitize": "^1.7.5",
+    "angular-ui-bootstrap": "^2.5.6",
+    "angular-ui-grid": "^4.7.1",
+    "bootstrap": "~3.3"
+  },
+  "devDependencies": {
+    "replace-in-file": "^3.4.2",
+    "uglify-js": "~3.0.0",
+    "usemin-cli": "^0.5.1"
+  }
+}

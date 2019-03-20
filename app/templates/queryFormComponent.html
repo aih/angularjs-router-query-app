@@ -1,0 +1,13 @@
+<div id="searchdiv">
+    <form>
+        <div class="form-group" >
+            <div style="display: inline" ng-repeat="param in queryForm.paramFields">
+                <label for="{{param.varname}}">{{param.label}}</label>
+                <input ng-model="queryForm.queryInputParams[param.varname]" ng-placeholder="param.placeholder" id="{{param.varname}}" class="searchInput"/>
+            </div>
+           <div style="display: inline; margin-left: 50px;"><button type="button" class="btn btn-primary" ng-click="queryForm.setQuery(queryForm.queryInputParams)">GO</button></div>
+           <!--Sample to show how to set parameters from a link-->
+           <a ui-sref='({queryParams:queryForm.newQueryParams})' ng-if="false">TEST</a>
+        </div>
+    </form>
+</div>

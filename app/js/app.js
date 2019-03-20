@@ -1,0 +1,53 @@
+(function () {
+  'use strict';
+  /* global angular */
+  /* global alertify */
+  var app = angular.module('app', ['ui.router', 'ui.bootstrap', 'ui.grid.resizeColumns']);
+
+  app.config(appConfig);
+  appConfig.$inject = ['$stateProvider', '$urlServiceProvider']
+  function appConfig($stateProvider, $urlServiceProvider) {
+      $urlServiceProvider.rules.otherwise({ state: 'about' });
+
+    var aboutState = {
+      name: 'about',
+      url: '/about',
+      templateUrl: 'app/templates/aboutTemplate.html' 
+    };
+
+    var searchState = {
+      name: 'search',
+      url: '/search',
+      component: 'search',
+      resolve: {
+        types: function(searchTypeService) {
+          return searchTypeService.getAllSearchTypes();
+        }
+      }
+    };
+
+    var appState = { 
+      name: 'search.type', 
+      url: '/{typeName}?queryParams', 
+      component: 'searchType',
+      resolve: {
+        searchData: function(searchFnService, $stateParams) {
+          let data = searchFnService.getSearchFn($stateParams.typeName)($stateParams.queryParams); 
+          console.log(data);
+          return data;
+        },
+        type: function(types, $stateParams) {
+          return types.find(function(type) { 
+            return type.name === $stateParams.typeName;
+          });
+        }
+      }
+    }
+  
+    $stateProvider
+    .state(aboutState)
+    .state(searchState)
+    .state(appState);
+  }
+
+})();

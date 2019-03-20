@@ -1,0 +1,88 @@
+[{
+        "name": "type1",
+        "paramFields": [{
+            "label": "Type1_Label1",
+            "placeholder": "type1_placeholder1",
+            "varname": "type1_input1"
+        },
+        {
+            "label": "Type1_Label2",
+            "placeholder": "type1_placeholder2",
+            "varname": "type1_input2"
+        }],
+        "gridOptions": {
+                "enableFiltering": true,
+                "data": "resultsGrid.gridData",
+                "columnDefs": [{
+                        "name": "Column 1",
+                        "field": "field_1",
+                        "minWidth": 300 
+                    },
+                    {
+                        "name": "Column 2",
+                        "field": "field_2",
+                        "minWidth": 200
+                    },
+                    {
+                        "name": "Column 3",
+                        "field": "field_3",
+                        "minWidth": 50,
+                        "maxWidth": 100,
+                        "enableColumnResizing": false
+                    },
+                    {
+                        "name": "Column 4",
+                        "field": "field_4",
+                        "minWidth": 50,
+                        "maxWidth": 100,
+                        "enableColumnResizing": false
+                    },
+
+                    {
+                        "name": "Column 5",
+                        "field": "field_5",
+                        "minWidth": 50,
+                        "maxWidth": 75,
+                        "enableColumnResizing": false
+                    }
+                ]
+            }
+        },
+    {
+        "name": "type2",
+        "paramFields": [{
+            "label": "Type2_Label1",
+            "placeholder": "type2_placeholder1",
+            "varname": "type2_input1"
+        }],
+        "gridOptions": {
+            "enableFiltering": true,
+            "data": "resultsGrid.gridData",
+            "columnDefs": [{
+                    "name": "Col 1",
+                    "field": "field_1",
+                    "minWidth": 300 
+                },
+                {
+                    "name": "Col 2",
+                    "field": "field_2",
+                    "minWidth": 200
+                },
+                {
+                    "name": "Col 3",
+                    "field": "field_3",
+                    "minWidth": 50,
+                    "maxWidth": 100,
+                    "enableColumnResizing": false
+                },
+                {
+                    "name": "Col 4",
+                    "field": "field_4",
+                    "minWidth": 50,
+                    "maxWidth": 100,
+                    "enableColumnResizing": false
+                }
+            ]
+        }
+    }
+]
