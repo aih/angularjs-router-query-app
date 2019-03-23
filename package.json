@@ -1,11 +1,11 @@
 {
   "name": "angularjs-router-query-app",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Generic app for routing",
   "main": "",
   "typings": "",
   "scripts": {
-    "build": "usemin ./index.src.html --dest ./ --output ./index.html; replace-in-file '<%= $npm_package_version %>' '0.0.4' ./app/templates/navbarTopComponent.html,./app/templates/navbarTopComponent.html;"
+    "build": "usemin ./index.src.html --dest ./ --output ./index.html; replace-in-file '<%= $npm_package_version %>' '0.0.5' ./app/templates/navbarTopComponent.src.html,./app/templates/navbarTopComponent.html;"
   },
   "repository": {
     "type": "git",
