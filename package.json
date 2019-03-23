@@ -5,7 +5,7 @@
   "main": "",
   "typings": "",
   "scripts": {
-    "build": "usemin ./index.src.html --dest ./ --output ./index.html; replace-in-file '<%= $npm_package_version %>' '0.0.1' ./index.html,./index.html;"
+    "build": "usemin ./index.src.html --dest ./ --output ./index.html; replace-in-file '<%= $npm_package_version %>' '0.0.2' ./index.html,./index.html;"
   },
   "repository": {
     "type": "git",
