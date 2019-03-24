@@ -1,0 +1,22 @@
+[{
+        "field_1": "value_x0",
+        "field_2": "value_x1",
+        "field_3": "value_x2",
+        "field_4": "value_x3",
+        "field_5": "value_x4"
+    },
+    {
+        "field_1": "value_y0",
+        "field_2": "value_y1",
+        "field_3": "value_y2",
+        "field_4": "value_y3",
+        "field_5": "value_y4"
+    },
+    {
+        "field_1": "value_z0",
+        "field_2": "value_z1",
+        "field_3": "value_z2",
+        "field_4": "value_z3",
+        "field_5": "value_z4"
+    }
+]

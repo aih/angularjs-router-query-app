@@ -6,6 +6,7 @@
             this.dropdowns = [
                 {"name": "Type1", "sref":"search.type({ typeName: 'type1' })" },
                 {"name": "Type2", "sref":"search.type({ typeName: 'type2' })" },
+                {"name": "Type3", "sref":"search.type({ typeName: 'type3' })" },
             ];
         },
         controllerAs: 'navbarTop',
