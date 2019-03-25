@@ -70,4 +70,27 @@
             gridOptions: '<'
         }
     });
+
+    app.component('tabs', {
+        templateUrl: 'app/templates/tabsComponent.html',
+        controller: function ($scope) {
+            this.tabs = [
+                {"name": "Tab1", "sref":"tabs.tab({ tabName: 'tab1' })" },
+                {"name": "Tab2", "sref":"tabs.tab({ tabName: 'tab2' })" },
+                {"name": "Tab3", "sref":"tabs.tab({ tabName: 'tab3' })" },
+            ];
+        },
+        controllerAs: 'tabsController',
+        bindings: {}
+    });
+
+    app.component('tab', {
+        templateUrl: 'app/templates/tabsComponent.html',
+        controller: function ($scope) {
+        },
+        controllerAs: 'tab',
+        bindings: {
+            tab: '<'
+        }
+    });
 })();

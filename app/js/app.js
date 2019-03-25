@@ -42,11 +42,32 @@
           });
         }
       }
-    }
+    };
+
+    var tabsState = {
+      name: 'tabs',
+      url: '/tabs',
+      component: 'tabs'
+    };
+
+    var tabsTypeState = { 
+      name: 'tabs.tab', 
+      url: '/{tabName}', 
+      component: 'tab',
+      resolve: {
+        tab: function(tabs, $stateParams) {
+          return tabs.find(function(tab) { 
+            return tab.name === $stateParams.tabName;
+          });
+        }
+      }
+    };
   
     $stateProvider
     .state(aboutState)
     .state(searchState)
+    .state(tabsState)
+    .state(tabsTypeState)
     .state(appState);
   }
 

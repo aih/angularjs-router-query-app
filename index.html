@@ -19,9 +19,6 @@
 <body ng-app="app">
     <navbar-top></navbar-top>
     <div  class="appBody">
-        <div class="navtabs">
-            <a ui-sref="tab.sref" ui-sref-active="active" ng-repeat="tab in tabs">{{tab.name}}</a>
-        </div>
         <div class="tabcontent">
             <ui-view></ui-view>
         </div>
