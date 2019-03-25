@@ -26,7 +26,7 @@
       }
     };
 
-    var appState = { 
+    var searchTypeState = { 
       name: 'search.type', 
       url: '/{typeName}?queryParams', 
       component: 'searchType',
@@ -47,10 +47,15 @@
     var tabsState = {
       name: 'tabs',
       url: '/tabs',
-      component: 'tabs'
+      component: 'tabs',
+      resolve: {
+        tabs: function(tabsService) {
+          return tabsService.getAllTabs();
+        }
+      }
     };
 
-    var tabsTypeState = { 
+    var tabState = { 
       name: 'tabs.tab', 
       url: '/{tabName}', 
       component: 'tab',
@@ -66,9 +71,9 @@
     $stateProvider
     .state(aboutState)
     .state(searchState)
+    .state(searchTypeState)
     .state(tabsState)
-    .state(tabsTypeState)
-    .state(appState);
+    .state(tabState);
   }
 
 })();

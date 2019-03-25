@@ -85,12 +85,13 @@
     });
 
     app.component('tab', {
-        templateUrl: 'app/templates/tabsComponent.html',
+        templateUrl: 'app/templates/tabComponent.html',
         controller: function ($scope) {
         },
-        controllerAs: 'tab',
+        controllerAs: 'tabController',
         bindings: {
             tab: '<'
         }
     });
+
 })();
