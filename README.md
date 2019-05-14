@@ -6,7 +6,7 @@ Includes routes for dropdowns and tabs, and a query application. The basic app h
 
 ## QuickStart
 
-View it on https://searchapp.xcentialcorp.com
+View it on http://searchapp.xcentialcorp.com
 
 It is running as a static Git Pages application.
 
